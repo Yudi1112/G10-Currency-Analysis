@@ -23,3 +23,14 @@ Swiss Franc (CHF)
 Norwegian Krone (NOK)
 
 Swedish Krona (SEK)
+
+
+# TODO
+
+1. Analyse Data
+
+2. Docker
+
+3. Jupyter Notebook or Shiny
+
+4. Latex Presentation
