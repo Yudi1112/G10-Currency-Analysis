@@ -27,7 +27,7 @@ Swedish Krona (SEK)
 
 # TODO
 
-1. Analyse Data
+1. Analyse Data - Tane
 
 2. Docker
 
