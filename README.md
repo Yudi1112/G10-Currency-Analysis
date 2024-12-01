@@ -34,3 +34,5 @@ Swedish Krona (SEK)
 3. Jupyter Notebook or Shiny
 
 4. Latex Presentation
+
+5. Add yaml file to github for conda environment
