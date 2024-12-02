@@ -6,6 +6,12 @@ import pandas as pd
 
 from config import PROCESSED_DATA_DIR, RAW_DATA_DIR
 
+"""
+1. Find the dataset with the shortest time span, take this as a reference
+2. Shorten all other datasets so that they are all the same length
+3. Copy the datasets to processed folder
+"""
+
 def find_shortest_time_span():
     """
     Finds the dataset with the shortest time span in the RAW_DATA_DIR.
@@ -93,11 +99,6 @@ app = typer.Typer()
 def main(
     output_path: Path = PROCESSED_DATA_DIR / "merged_dataset.csv",  # Output path for the merged file
 ):
-    """
-    1. Find the dataset with the shortest time span, take this as a reference
-    2. Shorten all other datasets so that they are all the same length
-    3. Copy the datasets to processed folder
-    """
     logger.info("Starting dataset check...")
     
     # Ensure the raw data directory exists
