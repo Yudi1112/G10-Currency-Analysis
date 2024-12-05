@@ -10,7 +10,7 @@ from loguru import logger
 from config import PROCESSED_DATA_DIR
 from datetime import datetime
 
-def calculate_depreciation(year):
+def calculate_depreciation(START, END):
     """
     Analyze which currency depreciated the most vs. CHF over the time period.
     """
@@ -35,8 +35,12 @@ def calculate_depreciation(year):
             # Load the dataset
             df = pd.read_csv(csv_file, parse_dates=["Date"])
 
-            # Filter the dataset to start from the specified START_DATE
-            df = df[df["Date"] >= datetime(year, 1, 1)]
+            # Convert START_YEAR and END_YEAR to datetime objects
+            START_YEAR = datetime(START, 1, 1)
+            END_YEAR = datetime(END, 12, 31)
+
+            # Filter the dataset to start from the specified year
+            df = df[(df["Date"] >= START_YEAR) & (df["Date"] <= END_YEAR)]
 
             if df.empty:
                 logger.warning(f"No data available after START_DATE for {csv_file.stem}. Skipping.")
@@ -69,4 +73,4 @@ def calculate_depreciation(year):
 
 
 if __name__ == "__main__":
-    calculate_depreciation(2000)
+    calculate_depreciation(2000, 2020)

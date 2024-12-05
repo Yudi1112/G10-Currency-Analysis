@@ -7,8 +7,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT))
 
-from config import PROCESSED_DATA_DIR, FIGURES_DIR
-from ipywidgets import interact, Dropdown
+from config import PROCESSED_DATA_DIR
 
 # Function to load and plot data for a selected currency
 def plot_currency_chart(currency):
