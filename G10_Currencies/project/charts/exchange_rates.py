@@ -10,12 +10,6 @@ sys.path.append(str(PROJECT_ROOT))
 from config import PROCESSED_DATA_DIR, FIGURES_DIR
 from ipywidgets import interact, Dropdown
 
-
-def plot_exchange_rate_chart(currency):
-    """
-    Plot exchange rate data from a CSV file in the processed data directory.
-    """
-
 # Function to load and plot data for a selected currency
 def plot_currency_chart(currency):
     """
@@ -50,4 +44,4 @@ def plot_currency_chart(currency):
 
 
 if __name__ == "__main__":
-    plot_exchange_rate_chart("CHF_AUD Historical Data")
+    plot_currency_chart("CHF_AUD Historical Data")

@@ -8,13 +8,12 @@ sys.path.append(str(PROJECT_ROOT))
 
 from loguru import logger
 from config import PROCESSED_DATA_DIR
-from variables import START_DATE 
+from datetime import datetime
 
-def calculate_depreciation():
+def calculate_depreciation(year):
     """
     Analyze which currency depreciated the most vs. CHF over the time period.
     """
-    logger.info("Starting depreciation analysis...")
 
     # Ensure the processed data directory exists
     if not PROCESSED_DATA_DIR.exists():
@@ -33,12 +32,11 @@ def calculate_depreciation():
     # Process each dataset
     for csv_file in csv_files:
         try:
-            logger.info(f"Processing file: {csv_file}")
             # Load the dataset
             df = pd.read_csv(csv_file, parse_dates=["Date"])
 
             # Filter the dataset to start from the specified START_DATE
-            df = df[df["Date"] >= START_DATE]
+            df = df[df["Date"] >= datetime(year, 1, 1)]
 
             if df.empty:
                 logger.warning(f"No data available after START_DATE for {csv_file.stem}. Skipping.")
@@ -51,8 +49,6 @@ def calculate_depreciation():
             # Calculate percentage depreciation
             depreciation = ((start_rate - end_rate) / start_rate) * 100
             depreciation_results[csv_file.stem] = depreciation
-
-            logger.info(f"{csv_file.stem}: Start Rate = {start_rate}, End Rate = {end_rate}, Depreciation = {depreciation:.2f}%")
 
         except Exception as e:
             logger.error(f"Error processing file {csv_file}: {e}")
@@ -69,6 +65,8 @@ def calculate_depreciation():
     else:
         logger.warning("No valid depreciation data found.")
 
+    return depreciation_results
+
 
 if __name__ == "__main__":
-    calculate_depreciation()
+    calculate_depreciation(2000)
