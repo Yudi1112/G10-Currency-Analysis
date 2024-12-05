@@ -36,6 +36,7 @@ def calculate_maximum_drawdown():
             logger.info(f"Processing file: {csv_file}")
             # Load the dataset
             df = pd.read_csv(csv_file, parse_dates=["Date"])
+            df = df.sort_values(by="Date")
 
             # Calculate the rolling maximum price up to each time point
             df["Rolling Max"] = df["Price"].cummax()
