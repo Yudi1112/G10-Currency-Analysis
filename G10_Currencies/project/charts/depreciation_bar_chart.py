@@ -36,7 +36,7 @@ def plot_depreciation_bar_chart(START, END):
     min_value = depreciation_values.min()
     colors = ["red" if val == min_value else "skyblue" for val in depreciation_values]
 
- # Plot the bar chart
+    # Plot the bar chart
     plt.figure(figsize=(12, 6))
     plt.bar(currencies, depreciation_values, color=colors, edgecolor="black")
 
