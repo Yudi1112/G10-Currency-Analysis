@@ -15,7 +15,8 @@ from config import PROCESSED_DATA_DIR
 
 def calculate_maximum_drawdown(START, END):
     """
-    Calculate the maximum drawdown for each currency within a specified time period.
+    Calculate the maximum drawdown for each currency within a specified time period,
+    using the reciprocal (1 / Price) of the original prices.
 
     Args:
         START (int): Start year for filtering the data.
@@ -52,11 +53,14 @@ def calculate_maximum_drawdown(START, END):
             # Ensure the dataset is sorted by date
             df = df.sort_values(by="Date")
 
-            # Calculate the rolling maximum of prices
-            df["Rolling Max"] = df["Price"].cummax()
+            # Calculate the reciprocal (1 / Price) of the original prices
+            df["Reciprocal Price"] = 1 / df["Price"]
+
+            # Calculate the rolling maximum of reciprocal prices
+            df["Rolling Max"] = df["Reciprocal Price"].cummax()
 
             # Calculate the drawdown as a percentage
-            df["Drawdown"] = (df["Price"] - df["Rolling Max"]) / df["Rolling Max"] * 100
+            df["Drawdown"] = (df["Reciprocal Price"] - df["Rolling Max"]) / df["Rolling Max"] * 100
 
             # Find the maximum drawdown value
             max_drawdown = df["Drawdown"].min()
