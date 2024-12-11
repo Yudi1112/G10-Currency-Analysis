@@ -15,12 +15,7 @@ RUN conda install -n G10_Currencies_3.13 -c conda-forge jupyterlab notebook nbco
 RUN pip install --no-cache-dir --upgrade pip \
   && pip install --no-cache-dir -r requirements.txt
 
-#Install TeX Live for LaTeX compilation
-RUN apt-get update && apt-get install -y texlive-full --no-install-recommends && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Compile the LaTeX file to PDF and save it in the same folder as the .tex file
-RUN cd "G10_Currencies/reports/text/paper" && pdflatex report.tex
 
 # Expose JupyterLab's default port
 EXPOSE 8888
