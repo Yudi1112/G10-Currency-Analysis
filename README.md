@@ -48,7 +48,7 @@ To open the Paper written for this project, you need to copy it from the contain
 
 1. Open a Terminal
 2. Enter Code: "docker ps" --> this will show you what the container id is of the running container
-3. Enter Code: "docker cp 90963f0b3aba:/G10_Currencies/reports/text/paper/report.pdf ."
+3. Enter Code: "docker cp <container id>:/G10_Currencies/reports/text/paper/report.pdf ."
    --> This will copy the pdf to your local environment
 4. Open the pdf with your prefered pdf viewer
    --> With windows: "start ./report.pdf"
