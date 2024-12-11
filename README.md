@@ -39,7 +39,7 @@ To open our interactive jupyter app follow these steps:
 1. Download and Install Docker Desktop
 2. Make sure Docker Desktop is running
 3. In your Terminal, navigate to "it-research-project"
-4. Enter Code: "docker build -t G10_Currencies ." --> this creates the docker image
+4. Enter Code: "docker build -t g10_currencies ." --> this creates the docker image
 5. Enter Code: "docker run -p 8888:8888 g10_currencies" --> this runs the container and also starts the jupyter lab app
 6. Open your local host or click on the link given in the terminal to view the App
 7. Make sure to run the code in the jupyter notebook so you are able to see the figures and graphs
