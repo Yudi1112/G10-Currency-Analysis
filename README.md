@@ -42,7 +42,8 @@ To open our interactive jupyter app follow these steps:
 4. Enter Code: "docker build -t g10_currencies ." --> this creates the docker image
 5. Enter Code: "docker run -p 8888:8888 g10_currencies" --> this runs the container and also starts the jupyter lab app
 6. Open your local host or click on the link given in the terminal to view the App
-7. Make sure to run the code in the jupyter notebook so you are able to see the figures and graphs
+7. In the File Explorer, navigate to G10_Currencies/Explained.ipynb
+8. Make sure to run the code in the jupyter notebook so you are able to see the figures and graphs
 
 To open the Paper written for this project, you need to copy it from the container to your local environment (make sure you have built the image and are running the container as shown above):
 
