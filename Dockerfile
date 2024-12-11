@@ -15,7 +15,7 @@ RUN conda install -n G10_Currencies_3.13 -c conda-forge jupyterlab notebook nbco
 RUN pip install --no-cache-dir --upgrade pip \
   && pip install --no-cache-dir -r requirements.txt
 
-# Install TeX Live for LaTeX compilation
+#Install TeX Live for LaTeX compilation
 RUN apt-get update && apt-get install -y texlive-full --no-install-recommends && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
@@ -26,5 +26,5 @@ RUN cd "G10_Currencies/reports/text/paper" && pdflatex report.tex
 EXPOSE 8888
 
 # Command to run JupyterLab when the container starts
-CMD ["conda", "run", "--no-capture-output", "-n", "G10_Currencies_3.13", "jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--NotebookApp.token=my_fixed_token"]
+CMD ["conda", "run", "--no-capture-output", "-n", "G10_Currencies_3.13", "jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--NotebookApp.token=''","--NotebookApp.password=''"]
 
