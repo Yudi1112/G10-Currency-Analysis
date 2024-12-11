@@ -23,7 +23,11 @@
 %----------------------------------------------------------------------------------------
 \thispagestyle{empty}
 \titleGP\
+\newpage
 
+{\LARGE \textbf{Abstract}}
+
+This study analyzes exchange rate risks for Swiss investors, focusing on G10 currencies using four risk metrics: depreciation, volatility, maximum drawdown, and Value at Risk (VaR). The Japanese Yen emerged as the riskiest currency due to steep depreciation (-162.21\%) and pronounced volatility. Similarly, the Norwegian Krone demonstrated high vulnerability to global shocks, while the Euro exhibited the lowest risks, reflecting its stability and strong economic integration. The research emphasizes the importance of multidimensional risk evaluation for informed decision-making. Future studies could incorporate broader datasets, geopolitical risks, and machine learning to refine forecasting and enhance risk assessment accuracy.
 
 \doublespacing\
 \setcounter{page}{1}
@@ -33,7 +37,7 @@
 
 \tableofcontents
 \listoffigures
-\listoftables
+
 
 
 \pagenumbering{arabic}
@@ -68,25 +72,82 @@ The third metric, maximum drawdown, measures the greatest drop from a peak to a 
 Through the combination of these four metrics, we gained a multidimensional understanding of the risks associated with each currency. Depreciation added a crucial long-term perspective, highlighting the cumulative effects of adverse currency movements, particularly for currencies like the Japanese Yen and British Pound, which demonstrated significant depreciation over the analyzed periods. This comprehensive approach enables us to compare their behavior under varying market conditions, ultimately addressing the research question of identifying the riskiest G10 currency for Swiss residents.
 \chapter{Analysis}
 \section{Pre-Global Financial Crisis (2000–2007)}
-In the times preceding the Global Financial Crisis, the G10 currencies displayed varying levels of risk when evaluated using the indicators of depreciation, volatility, Value at Risk (VaR), and maximum drawdown. Depreciation results reveal that the Japanese Yen experienced substantial depreciation relative to the Swiss Franc during this period, highlighting the relative strengthening of the Swiss Franc. Similarly, the US Dollar faced significant depreciation, reflecting vulnerabilities tied to broader economic conditions. In contrast, the Euro demonstrated an appreciation, underscoring its stability and the initial confidence associated with its introduction as a global currency \parencite{EuropeanUnion2024}. The Norwegian Krone and the New Zealand Dollar also gained appreciation.
+In the times preceding the Global Financial Crisis, the G10 currencies displayed varying levels of risk when evaluated using the indicators of depreciation, volatility, Value at Risk (VaR), and maximum drawdown.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/depreciation_2000_2007.pdf}
+    \caption{Depreciation of Currencies vs CHF (2000--2007).}
+    \label{fig:depreciation_2000_2007}
+\end{figure}
+
+Depreciation results reveal that the Japanese Yen experienced substantial depreciation relative to the Swiss Franc during this period, highlighting the relative strengthening of the Swiss Franc. Similarly, the US Dollar faced significant depreciation, reflecting vulnerabilities tied to broader economic conditions. In contrast, the Euro demonstrated an appreciation, underscoring its stability and the initial confidence associated with its introduction as a global currency \parencite{EuropeanUnion2024}. The Norwegian Krone and the New Zealand Dollar also gained appreciation.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/volatility_2000_2007.pdf}
+    \caption{Volatility of Exchange rates (2000--2007).}
+    \label{fig:volatility_2000_2007}
+\end{figure}
 
 Volatility indicates that the Australian Dollar displayed the highest standard deviation, making it the most volatile currency in this period. This heightened volatility is often attributed to Australia's reliance on commodity exports and its open economy, which exposed it to external market shocks \parencite{chen2003commodity}. Conversely, the Euro exhibited lower volatility, reinforcing its reputation as a stable currency supported by strong economic frameworks within the eurozone \parencite{juncker2015completing}.
 
-Analyzing Value at Risk (VaR) provides additional insights into potential downside risks. The Euro stands out as the least risky currency, demonstrating minimal expected losses under typical market conditions. On the other hand, the Canadian Dollar displayed higher VaR levels, consistent with its sensitivity to global commodity price fluctuations due to Canada's heavy reliance on energy exports \parencite{chen2003commodity}.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/maximum_drawdown_2000_2007.pdf}
+    \caption{Maximum Drawdown of Exchange rates (2000--2007).}
+    \label{fig:maximum_drawdown_2000_2007}
+\end{figure}
 
 The maximum drawdown analysis underscores critical differences in historical risks. The Japanese Yen experienced significant drawdowns during this period, challenging its traditional status as a safe-haven currency \parencite{kopyl2016safe}. Similarly, the US Dollar faced substantial drawdowns, reflecting vulnerabilities associated with global monetary shifts. In contrast, the Euro experienced smaller drawdowns, reinforcing its role as a stable currency during this era.
 
-By synthesizing these metrics, a nuanced picture of currency risks emerges. The Japanese Yen, despite its safe-haven reputation, exhibited high drawdowns and depreciation, challenging its conventional stability narrative. Similarly, the Australian and US Dollars emerged as riskier options due to their elevated volatility, drawdowns, and less favorable depreciation profiles. In contrast, the Euro showcased consistently lower risks across all metrics, reflecting its growing role as a reserve currency and its association with economic stability.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/var_2000_2007.pdf}
+    \caption{Value at Risk of Exchange rates (2000--2007).}
+    \label{fig:var_2000_2007}
+\end{figure}
 
+Analyzing Value at Risk (VaR) provides additional insights into potential downside risks. The Euro stands out as the least risky currency, demonstrating minimal expected losses under typical market conditions. On the other hand, the Canadian Dollar displayed higher VaR levels, consistent with its sensitivity to global commodity price fluctuations due to Canada's heavy reliance on energy exports \parencite{chen2003commodity}.
+
+By synthesizing these metrics, a nuanced picture of currency risks emerges. The Japanese Yen, despite its safe-haven reputation, exhibited high drawdowns and depreciation, challenging its conventional stability narrative. Similarly, the Australian and US Dollars emerged as riskier options due to their elevated volatility, drawdowns, and less favorable depreciation profiles. In contrast, the Euro showcased consistently lower risks across all metrics, reflecting its growing role as a reserve currency and its association with economic stability.
 
 \section{During the Global Financial Crisis (2007–2009)}
 The period of the Global Financial Crisis (2007–2009) represented one of the most tumultuous periods in modern economic history, noted for severe market drops and significant fluctuations in exchange rates. This segment assesses the risk metrics—depreciation, volatility, Value at Risk (VaR), and maximum drawdown—for the G10 currencies throughout this chaotic phase.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/depreciation_2007_2009.pdf}
+    \caption{Depreciation of Currencies vs CHF (2007--2009).}
+    \label{fig:depreciation_2007_2009}
+\end{figure}
+
 Depreciation findings indicate that the British Pound experienced the most significant depreciation (-45.99\%) compared to the Swiss Franc. This demonstrates the profound effects of the financial crisis on the economy of the United Kingdom, which was significantly influenced by global financial markets. On the other hand, the Japanese Yen showed an increase of 7.50\%, highlighting its status as a safe-haven currency in times of economic turmoil. The Euro showed notable strength, experiencing a slight decline of -9.32\%, underscoring the relative stability of the eurozone during significant economic upheavals. These results highlight the differing levels of currency stability and the unique effects of the crisis on various economies.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/volatility_2007_2009.pdf}
+    \caption{Volatility of Exchange rates (2007--2009).}
+    \label{fig:volatility_2007_2009}
+\end{figure}
 
 The volatility chart reveals that the CHF-CAD and CHF-AUD currency exchange rates exhibited the highest levels of variation, displaying standard deviations of 0.1616 and 0.1468, correspondingly. This heightened volatility is due to Canada and Australia being countries that export commodities, having economies closely linked to international trade. Throughout the financial crisis, the oil price shock led to extreme volatility as the price went up to almost 150\$ per barrel in the summer and back to 40\$ in December \parencite{behr20092008}. This may have caused the currency of commodity-exporting countries to vary. In comparison, the CHF-EUR exchange rate displayed the lowest volatility at 0.0655, underscoring the eurozone's relative stability despite difficulties in other international markets. The euro's relative stability mirrors synchronized monetary policies and strong economic fundamentals in the eurozone \parencite{lane2012european}.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/maximum_drawdown_2007_2009.pdf}
+    \caption{Maximum Drawdown of Exchange rates (2007--2009).}
+    \label{fig:maximum_drawdown_2007_2009}
+\end{figure}
+
 The maximum drawdown measure provides a deeper perspective into the historical severity of currency declines during the crisis. The CHF-NZD exchange rate experienced the largest drawdown at -37.88\%, reflecting significant investor pessimism and the vulnerability of the New Zealand economy to systemic financial shocks. The GBP followed closely with a drawdown of -36.51\%, underscoring the impact of declining global trade on smaller, export-driven economies. Conversely, the Euro had the smallest maximum drawdown at -12.10%.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/var_2007_2009.pdf}
+    \caption{Value at Risk of Exchange rates (2007--2009).}
+    \label{fig:var_2007_2009}
+\end{figure}
 
 The Value at Risk (VaR) assessment supports these findings, indicating that the CHF-CAD demonstrated the highest VaR at -8.72\%, signifying the substantial risks associated with holding this currency during the crisis. This aligns with the economic vulnerabilities Canada faced as an economy strongly tied to the US economy, where the financial crisis originated and had the biggest impact \parencite{claessens2010cross}. Similarly, CHF-AUD exhibited a significant VaR of -6.71\%, reinforcing the heightened risks associated with commodity-linked currencies. In contrast, the CHF-EUR demonstrated the lowest VaR at -2.98\%, showcasing its comparative stability during this period of financial turbulence.
 
@@ -97,11 +158,39 @@ In conclusion, the analysis highlights the heightened risks associated with curr
 \section{Post-Financial Crisis (2009–2024)}
 Following the 2008 financial crisis, global financial markets experienced a phase of stabilization, but certain currencies displayed heightened levels of volatility and risk, reflecting regional economic events and global monetary policies. During this period, the metrics of depreciation, volatility, maximum drawdown, and Value at Risk (VaR) reveal significant trends among the G10 currencies.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/depreciation_2009_2024.pdf}
+    \caption{Depreciation of Currencies vs CHF (2009--2024).}
+    \label{fig:depreciation_2009_2024}
+\end{figure}
+
 The depreciation analysis indicates that the Japanese Yen faced the largest depreciation, registering a total decline of -119.28\% in relation to the Swiss Franc. This outcome highlights the ongoing weakness of the JPY compared to the CHF, likely affected by Japan's extraordinarily lenient monetary policies, including negative interest rates and significant quantitative easing by the Bank of Japan (BOJ). These measures, aimed at boosting local demand, also devalued the currency through expanded monetary supply \parencite{shirai2020bank}. In contrast, the New Zealand Dollar showed the least depreciation at -12.94\%, reflecting its relative resilience during this period.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/volatility_2009_2024.pdf}
+    \caption{Volatility of Exchange rates (2009--2024).}
+    \label{fig:volatility_2009_2024}
+\end{figure}
 
 The volatility examination reveals that the New Zealand Dollar and Japanese Yen had the greatest standard deviation values, around 0.101 and 0.100 respectively. The NZD's considerable volatility underscores its dependence on agricultural exports and susceptibility to changes in global commodity prices. Conversely, the JPY's volatility results from its dual role as a safe-haven currency and its vulnerability to speculative trading during uncertain financial times. The Euro had the lowest volatility during this time frame (0.0674), consistent with the eurozone's monetary stability, as well as Switzerland's steady economic alignment with the eurozone \parencite{claessens2010cross}.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/maximum_drawdown_2009_2024.pdf}
+    \caption{Maximum Drawdown of Exchange rates (2009--2024).}
+    \label{fig:maximum_drawdown_2009_2024}
+\end{figure}
+
 The maximum drawdown metric identifies the Norwegian Krone as the most perilous currency, exhibiting a maximum drawdown of -56.93\%, highlighting the currency’s sensitivity to fluctuations in oil prices. Norway's significant reliance on petroleum exports rendered the NOK especially vulnerable to declining oil prices during this time, particularly in 2014–2015, when crude prices dropped sharply due to oversupply and reduced global demand \parencite{bergholt2016business}. The Japanese Yen has a maximum drawdown of -56.67\%. This sharp drop illustrates the BOJ's bold monetary easing measures, which devalued the currency despite its safe-haven reputation. In comparison, the Euro (EUR) showed the least maximum drawdown at -39.03\%, highlighting its relative strength and stability thanks to the eurozone's robust monetary system and trade connections with Switzerland.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/var_2009_2024.pdf}
+    \caption{Value at Risk of Exchange rates (2009--2024).}
+    \label{fig:var_2009_2024}
+\end{figure}
 
 The Value at Risk results during this timeframe also underscore the Japanese Yen as the riskiest currency, with a VaR of -5.05\% at a 95\% confidence level. Similarly, the Norwegian Krone recorded a VaR of -4.85\%. This highlights the NOK's pronounced downside risk due to its exposure to volatile oil prices \parencite{bergholt2016business}. In contrast, the Swiss Franc-Euro pair exhibited the lowest VaR at -2.83\%, confirming its relative stability and the continued alignment of economic policies between Switzerland and the eurozone.
 
@@ -110,11 +199,39 @@ The results from the four risk metrics—depreciation, volatility, maximum drawd
 \section{Comprehensive Analysis of the Entire Period (2000–2024)}
 The comprehensive analysis of the entire period from 2000 to 2024 offers a complete view of the risks associated with the G10 currencies for a Swiss resident. By considering all four metrics, the study identifies the New Zealand Dollar as the riskiest currency during this timeframe. This consistent finding across the metrics highlights the unique challenges posed by this currency for risk management.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/depreciation_2000_2024.pdf}
+    \caption{Depreciation of Currencies vs CHF (2000--2024).}
+    \label{fig:depreciation_2000_2024}
+\end{figure}
+
 Starting with depreciation, the Japanese Yen exhibited the most significant depreciation (-162.21\%) relative to the Swiss Franc over the 24-year period. This persistent weakness reflects the Bank of Japan's prolonged monetary easing policies and negative interest rates, which aimed to stimulate domestic growth but devalued the currency in international markets \parencite{shirai2020bank}. In contrast, the New Zealand Dollar demonstrated a relatively lower depreciation (-57.24\%), underlining its better performance against the Swiss Franc despite its exposure to commodity price volatility. The Euro, with a depreciation of -72.38\%, showed relative stability during this period, likely aided by the eurozone's monetary policies and strong economic integration with Switzerland.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/volatility_2000_2024.pdf}
+    \caption{Volatility of Exchange rates (2000--2024).}
+    \label{fig:volatility_2000_2024}
+\end{figure}
 
 Turning to volatility, the New Zealand Dollar displayed the highest standard deviation (0.105294), indicating significant fluctuations in its exchange rate over the period. Such high volatility reflects the inherent instability of the New Zealand Dollar, influenced by factors such as commodity price dependencies and a relatively smaller, open economy \parencite{chen2003commodity}. In contrast, the Euro exhibited the lowest volatility (0.060467), underscoring the stability of the Euro in relation to the Swiss Franc. Additionally, the relatively low volatility of the Euro and the Swiss Franc during a portion of the study period can also be attributed to the Swiss National Bank’s (SNB) monetary policy. The Swiss National Bank implemented the minimum exchange rate of CHF 1.20 per Euro from 2011 to 2015, effectively reducing volatility between the Swiss franc and the Euro. This policy contributed to observed stability in exchange rate fluctuations during this time, particularly in the face of broader eurozone uncertainties \parencite{auer2015safe}.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/maximum_drawdown_2000_2024.pdf}
+    \caption{Maximum Drawdown of Exchange rates (2000--2024).}
+    \label{fig:maximum_drawdown_2000_2024}
+\end{figure}
+
 The maximum drawdown metric further underscores the risks of holding the New Zealand Dollar. With a maximum drawdown of -45.22\%, it demonstrates significant exposure to steep declines in value, reflecting periods of severe economic downturns or external shocks. Similarly, the Norwegian Krone (NOK) displayed a maximum drawdown of -63.62\%, highlighting its sensitivity to oil price fluctuations and dependency on petroleum exports \parencite{bergholt2016business}. The Japanese Yen, contrary to its safe-haven reputation, recorded the steepest maximum drawdown at -66.09\%, likely due to speculative trading and the BOJ's monetary policies weakening the currency's value during critical periods \parencite{shirai2020bank}. By contrast, the Euro experienced the smallest maximum drawdown (-44.60\%), supported by its integration into the stable eurozone economy and relatively conservative monetary policies.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.75\textwidth]{images/var_2000_2024.pdf}
+    \caption{Value at Risk of Exchange rates (2000--2024).}
+    \label{fig:var_2000_2024}
+\end{figure}
 
 Value at Risk (VaR) analysis complements these findings. The New Zealand Dollar emerged as the riskiest currency in terms of VaR, with a maximum expected loss of -5.29\% at a 95\% confidence level. Similarly, the Norwegian Krone demonstrated a VaR of -4.79\%, reflecting its vulnerability to fluctuations in crude oil prices \parencite{bergholt2016business}. The Euro, with a VaR of -2.59\%, maintained its position as the least risky currency, emphasizing its comparative stability over time.
 
