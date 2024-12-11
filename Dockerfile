@@ -10,8 +10,8 @@ RUN conda env create -f environment.yaml
 # Ensure Conda environment is activated for all subsequent RUN commands
 SHELL ["conda", "run", "-n", "G10_Currencies_3.13", "/bin/bash", "-c"]
 
-# Install JupyterLab and additional dependencies
-RUN conda install -n G10_Currencies_3.13 -c conda-forge jupyterlab notebook nbconvert nbclient
+# Install Jupyter Notebook and additional dependencies
+RUN conda install -n G10_Currencies_3.13 -c conda-forge notebook nbconvert nbclient
 RUN pip install --no-cache-dir --upgrade pip \
   && pip install --no-cache-dir -r requirements.txt
 
@@ -24,9 +24,8 @@ RUN cd "G10_Currencies/reports/text/paper" && \
     pdflatex report.tex && \
     pdflatex pre.tex
 
-# Expose JupyterLab's default port
+# Expose Jupyter Notebook's default port
 EXPOSE 8888
 
-# Command to run JupyterLab when the container starts
-CMD ["conda", "run", "--no-capture-output", "-n", "G10_Currencies_3.13", "jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--NotebookApp.token=''","--NotebookApp.password=''"]
-
+# Command to run Jupyter Notebook when the container starts
+CMD ["conda", "run", "--no-capture-output", "-n", "G10_Currencies_3.13", "jupyter", "notebook", "--ip=0.0.0.0", "--port=8888", "--allow-root", "--NotebookApp.token=''","--NotebookApp.password=''"]
