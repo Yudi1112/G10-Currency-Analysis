@@ -1,14 +1,18 @@
 import sys
 import pandas as pd
 from pathlib import Path
+import logging
+from datetime import datetime
+
+# Set up logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
 
 # Add the project root to sys.path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT))
 
-from loguru import logger
 from config import PROCESSED_DATA_DIR
-from datetime import datetime
 
 def calculate_depreciation(START, END):
     """
@@ -35,15 +39,15 @@ def calculate_depreciation(START, END):
             # Load the dataset
             df = pd.read_csv(csv_file, parse_dates=["Date"])
 
-            # Convert START_YEAR and END_YEAR to datetime objects
+            # Convert START and END to datetime objects
             START_YEAR = datetime(START, 1, 1)
             END_YEAR = datetime(END, 12, 31)
 
-            # Filter the dataset to start from the specified year
+            # Filter the dataset to the specified date range
             df = df[(df["Date"] >= START_YEAR) & (df["Date"] <= END_YEAR)]
 
             if df.empty:
-                logger.warning(f"No data available after START_DATE for {csv_file.stem}. Skipping.")
+                logger.warning(f"No data available in the specified range for {csv_file.stem}. Skipping.")
                 continue
 
             # Extract start and end exchange rates
@@ -60,7 +64,8 @@ def calculate_depreciation(START, END):
     # Identify the currency with the highest depreciation
     if depreciation_results:
         max_depreciation_currency = min(depreciation_results, key=depreciation_results.get)
-        logger.success(f"Currency with the highest depreciation: {max_depreciation_currency} ({depreciation_results[max_depreciation_currency]:.2f}%)")
+        logger.info(f"Currency with the highest depreciation: {max_depreciation_currency} "
+                    f"({depreciation_results[max_depreciation_currency]:.2f}%)")
 
         # Print all depreciation results
         print("\nDepreciation Results:")

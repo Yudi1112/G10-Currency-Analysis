@@ -8,7 +8,7 @@ from datetime import datetime
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT))
 
-from analysis.maximum_drawdown import calculate_maximum_drawdown
+from scripts.maximum_drawdown import calculate_maximum_drawdown
 from config import PROCESSED_DATA_DIR, FIGURES_DIR
 
 def plot_maximum_drawdown_bar_chart(START, END):

@@ -3,12 +3,16 @@ import pandas as pd
 import numpy as np
 from pathlib import Path
 from datetime import datetime
+import logging
+
+# Set up logging
+logging.basicConfig(level=logging.WARNING, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
 
 # Add the project root to sys.path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT))
 
-from loguru import logger
 from config import PROCESSED_DATA_DIR
 
 def calculate_var(START, END, confidence_level=0.95):

@@ -3,14 +3,17 @@ import pandas as pd
 from pathlib import Path
 from datetime import datetime
 import numpy as np
+import logging
+
+# Set up logging
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
 
 # Add the project root to sys.path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT))
 
-from loguru import logger
 from config import PROCESSED_DATA_DIR
-
 
 def calculate_volatility(START, END):
     """
@@ -32,11 +35,11 @@ def calculate_volatility(START, END):
             # Load the dataset
             df = pd.read_csv(csv_file, parse_dates=["Date"])
 
-            # Convert START_YEAR and END_YEAR to datetime objects
+            # Convert START and END to datetime objects
             START_YEAR = datetime(START, 1, 1)
             END_YEAR = datetime(END, 12, 31)
 
-            # Filter the dataset to start from the specified year
+            # Filter the dataset to the specified date range
             df = df[(df["Date"] >= START_YEAR) & (df["Date"] <= END_YEAR)]
 
             # Calculate monthly log returns

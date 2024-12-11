@@ -2,14 +2,15 @@ import sys
 import pandas as pd
 from pathlib import Path
 from datetime import datetime
+import logging
+
+# Set up logging
+logging.basicConfig(level=logging.WARNING, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
 
 # Add the project root to sys.path
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT))
-
-from loguru import logger
-logger.remove()
-logger.add(sys.stdout, level="WARNING")  # Zeigt nur WARNINGS und ERRORs an
 
 from config import PROCESSED_DATA_DIR
 
@@ -38,12 +39,10 @@ def calculate_maximum_drawdown(START, END):
     # Process each dataset
     for csv_file in csv_files:
         try:
-            logger.info(f"Processing file: {csv_file}")
-
             # Load the dataset
             df = pd.read_csv(csv_file, parse_dates=["Date"])
 
-            # Convert START_YEAR and END_YEAR to datetime objects
+            # Convert START and END to datetime objects
             START_YEAR = datetime(START, 1, 1)
             END_YEAR = datetime(END, 12, 31)
 

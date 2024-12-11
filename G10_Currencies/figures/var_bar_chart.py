@@ -1,6 +1,13 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-from analysis.value_at_risk import calculate_var
+import sys
+from pathlib import Path
+
+# Add the project root to sys.path
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+sys.path.append(str(PROJECT_ROOT))
+
+from scripts.value_at_risk import calculate_var
 from config import PROCESSED_DATA_DIR, FIGURES_DIR
 
 def plot_var_bar_chart(START, END, confidence_level=0.95):
