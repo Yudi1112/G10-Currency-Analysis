@@ -1,0 +1,8 @@
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Methodology}{4}{chapter.2}%
+\contentsline {chapter}{\numberline {3}Analysis}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Pre-Global Financial Crisis (2000–2007)}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}During the Global Financial Crisis (2007–2009)}{10}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Post-Financial Crisis (2009–2024)}{13}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Comprehensive Analysis of the Entire Period (2000–2024)}{16}{section.3.4}%
+\contentsline {chapter}{\numberline {4}Conclusion}{20}{chapter.4}%
